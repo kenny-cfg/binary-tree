@@ -17,9 +17,12 @@ class BinarySearchTree:
                     current_node.set_left_node(Node(value))
                     return
                 current_node = new_current_node
-                continue
-            return
-        pass
+            else:
+                new_current_node = current_node.get_right_node()
+                if new_current_node is None:
+                    current_node.set_right_node(Node(value))
+                    return
+                current_node = new_current_node
 
 
 if __name__ == "__main__":
