@@ -1,5 +1,6 @@
 from typing import Self
 
+
 class Node:
     def __init__(self, value):
         self.__value = value
