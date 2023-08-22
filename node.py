@@ -1,6 +1,8 @@
+from typing import Self
+
 class Node:
     def __init__(self, value):
-        self.value = value
+        self.__value = value
         self.__left_node = None
         self.__right_node = None
 
@@ -18,15 +20,18 @@ class Node:
             raise AttributeError('Right node already set')
         self.__right_node = node
 
-    def get_left_node(self):
+    def get_left_node(self) -> Self:
         return self.__left_node
 
-    def get_right_node(self):
+    def get_right_node(self) -> Self:
         return self.__right_node
+
+    def get_value(self):
+        return self.__value
 
 
 if __name__ == '__main__':
     root_node = Node(1000)
     root_node.set_left_node(Node(500))
-    root_node.set_left_node(Node(1500))
-    print(root_node.value, root_node.get_right_node().value)
+    root_node.set_right_node(Node(1500))
+    print(root_node.get_value(), root_node.get_right_node().get_value())
