@@ -24,6 +24,20 @@ class BinarySearchTree:
                     return
                 current_node = new_current_node
 
+    def get_sorted_values(self):
+        def get_sorted_values(node: Node):
+            sorted_values = []
+            if node.get_left_node() is not None:
+                for x in get_sorted_values(node.get_left_node()):
+                    sorted_values.append(x)
+            sorted_values.append(node.get_value())
+            if node.get_right_node() is not None:
+                for x in get_sorted_values(node.get_right_node()):
+                    sorted_values.append(x)
+            return sorted_values
+
+        return get_sorted_values(self.__root_node)
+
 
 if __name__ == "__main__":
     bst = BinarySearchTree()
@@ -34,4 +48,7 @@ if __name__ == "__main__":
     bst.insert_value(1500)
     bst.insert_value(1200)
     bst.insert_value(1500)
+    sorted = bst.get_sorted_values()
+    for x in sorted:
+        print(x)
     print(bst)
