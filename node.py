@@ -7,11 +7,15 @@ class Node:
     def set_left_node(self, node):
         if not isinstance(node, Node):
             raise AttributeError('Left node has to be a node')
+        if self.__left_node is not None:
+            raise AttributeError('Left node already set')
         self.__left_node = node
 
     def set_right_node(self, node):
         if not isinstance(node, Node):
             raise AttributeError('Right node has to be a node')
+        if self.__right_node is not None:
+            raise AttributeError('Right node already set')
         self.__right_node = node
 
     def get_left_node(self):
@@ -23,6 +27,6 @@ class Node:
 
 if __name__ == '__main__':
     root_node = Node(1000)
-    root_node.set_left_node(500)
-    root_node.set_right_node(Node(1500))
+    root_node.set_left_node(Node(500))
+    root_node.set_left_node(Node(1500))
     print(root_node.value, root_node.get_right_node().value)
