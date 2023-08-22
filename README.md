@@ -12,4 +12,5 @@
     * Subsequent nodes will have to traverse the tree until an empty node container is found
       * If the value is less than the current node's value, traverse left
       * If the value is greater than or equal to the current node's value, traverse right
-      
+    * Get sorted values method
+      * It will traverse the tree, returning the values in order

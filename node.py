@@ -1,6 +1,3 @@
-from typing import Self
-
-
 class Node:
     def __init__(self, value):
         self.__value = value
@@ -21,10 +18,10 @@ class Node:
             raise AttributeError('Right node already set')
         self.__right_node = node
 
-    def get_left_node(self) -> Self:
+    def get_left_node(self):
         return self.__left_node
 
-    def get_right_node(self) -> Self:
+    def get_right_node(self):
         return self.__right_node
 
     def get_value(self):
