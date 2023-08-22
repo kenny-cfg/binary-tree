@@ -26,13 +26,13 @@ class BinarySearchTree:
 
     def get_sorted_values(self):
         def get_sorted_values(node: Node):
-            if node.get_left_node() is not None:
-                for x in get_sorted_values(node.get_left_node()):
-                    yield x
+            if node is None:
+                return
+            for x in get_sorted_values(node.get_left_node()):
+                yield x
             yield node.get_value()
-            if node.get_right_node() is not None:
-                for x in get_sorted_values(node.get_right_node()):
-                    yield x
+            for x in get_sorted_values(node.get_right_node()):
+                yield x
 
         return get_sorted_values(self.__root_node)
 
